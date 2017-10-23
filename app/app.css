@@ -1,0 +1,6 @@
+@import "nativescript-theme-core/css/core.light.css";
+@import "platform.css";
+
+Page {
+    font-family: 'Avenir-Medium';
+}

@@ -1,0 +1,38 @@
+<Gradient direction="to bottom" colors="#00A8C5, #FFFF7E" ios:marginTop="-20">
+
+    <GridLayout rows="*, auto, *">
+        <StackLayout row="0">
+            <Button text="Cancel" color="white" horizontalAlignment="right" class="m-10" (tap)="close()"></Button>
+        </StackLayout>
+
+        <StackLayout class="form" row="1" horizontalAlignment="center">
+            <Image src="res://logo" class="m-30"></Image>
+            <TextField class="input m-b-15" hint="Enter your Email" [(ngModel)]="email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField class="input m-b-15" hint="Enter your password." [(ngModel)]="password" secure="true"></TextField>
+            <Button class="btn btn-primary btn-rounded-lg" text="LOGIN" (tap)="login()"></Button>
+            <Label class="footnote text-center" text="Forgot your password?" textWrap="true" (tap)="forgotpassword()"></Label>
+            <Label class="footnote text-center m-t-30" text="Not a member yet?" textWrap="true"></Label>
+            <Button class="btn text-center" text="Create an account" (tap)="signup()" height="20"></Button>
+        </StackLayout>
+    </GridLayout>
+</Gradient>
+
+<style scoped>
+    Button {
+        height: 44;
+    }
+
+    .form {
+        /* horizontal-align: center;
+        vertical-align: center; */
+        width: 300;
+        background-color: rgba(255, 255, 255, 0.99);
+        padding: 15;
+        border-radius: 15;
+    }
+
+    .input {
+        border-bottom-width: 1;
+        border-bottom-color: #eee;
+    }
+</style>

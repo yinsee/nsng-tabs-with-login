@@ -1,0 +1,15 @@
+platforms
+hooks
+node_modules
+lib
+debugger
+dist
+report
+
+app/**/*.map
+app/**/*.js
+app/tns_modules
+
+.DS_Store
+**/*.log
+tags
