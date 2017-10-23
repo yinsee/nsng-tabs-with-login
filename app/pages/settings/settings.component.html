@@ -1,11 +1,11 @@
-<GridLayout rows="*,auto,*">
+<GridLayout rows="*,auto,*" class="m-15">
     <StackLayout row="1" *ngIf="!account.isLoggedIn">
         <Label class="h2 text-center" text="Account Required" textWrap="true"></Label>
-        <Label class="footnote m-b-20 text-center" text="You have to login or create an account to access this."></Label>
+        <Label class="footnote m-b-20 text-center" text="You have to login or create an account to access this." textWrap="true"></Label>
         <Button row="1" text="Login / Sign Up" class="btn btn-outline btn-rounded-lg" (tap)="login()"></Button>
     </StackLayout>
 
     <StackLayout row="1" *ngIf="account.isLoggedIn">
-        <Label class="footnote text-center" text="You are logged in as {{account.currentUser.email}}"></Label>
+        <Label class="footnote text-center" text="You are logged in as {{account.currentUser.email}}" textWrap="true"></Label>
     </StackLayout>
 </GridLayout>

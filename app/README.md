@@ -1,5 +1,5 @@
-# NativeScript Tutorial Angular Template
+# NativeScript-NG App Template
 
-This repo serves as the starting point for NativeScript’s [Angular Getting Started Guide](https://docs.nativescript.org/angular/tutorial/ng-chapter-0).
+Troubleshooting
 
-Please file any issues with this template on the [NativeScript/docs repository](https://github.com/nativescript/docs), which is where the tutorial content lives.
+When you see app/tns_module folder, delete it. For some reason this folder is auto-created, and causing nasty compilation errors.
