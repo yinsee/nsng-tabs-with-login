@@ -33,4 +33,8 @@ export class NewsfeedProvider {
         return this._news;
     }
 
+    getNewsByIndex (index) {
+        return this._news[index];
+    }
+
 }

@@ -1,4 +1,4 @@
-<ActionBar title="App Template" class="action-bar">
+<ActionBar title="" class="action-bar">
     <StackLayout orientation="horizontal" ios:horizontalAlignment="left" android:horizontalAlignment="left">
         <Image src="res://logo" class="action-image m-y-5"></Image>
     </StackLayout>
@@ -13,18 +13,18 @@
 
 <TabView #tabView class="tab-view" selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)">
     <StackLayout *tabItem="{title: 'News', iconSource:'res://home'}">
-        <app-newsfeed></app-newsfeed>
+        <router-outlet name="tab0"></router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stay', iconSource:'res://sofa'}">
-        <app-stay></app-stay>
+        <router-outlet name="tab1"></router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Share', iconSource:'res://plus'}">
-        <app-share></app-share>
+        <router-outlet name="tab2"></router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Explore', iconSource:'res://map_marker'}">
-        <app-explore></app-explore>
+        <router-outlet name="tab3"></router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Settings', iconSource:'res://settings'}">
-        <app-settings></app-settings>
+        <router-outlet name="tab4"></router-outlet>
     </StackLayout>
 </TabView>

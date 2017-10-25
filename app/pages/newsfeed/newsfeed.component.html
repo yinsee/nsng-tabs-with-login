@@ -1,5 +1,5 @@
-<GridLayout rows="*">
-    <ListView [items]="news" (itemLoading)="onItemLoading($event)" class="list-group">
+<GridLayout>
+    <ListView [items]="news" (itemLoading)="onItemLoading($event)" class="list-group" (itemTap)="onItemTap($event)">
         <ng-template let-item="item">
             <StackLayout class="list-group-item">
                 <WebImage [src]="item.image" stretch="aspectFill" height="240" *ngIf="item.image" class="m-b-10"></WebImage>

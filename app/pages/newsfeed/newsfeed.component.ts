@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular";
 import { News } from "../../models/news"
 import { ItemEventData } from "ui/list-view";
 import { NewsfeedProvider } from "../../services/newsfeed.provider"
@@ -22,6 +23,10 @@ export class NewsfeedComponent implements OnInit {
         initializeOnAngular();
     }
 
+    onItemTap (args: ItemEventData) {
+        this.router.navigate(["/main", { outlets: { tab0: ["newsfeed", args.index] } }]);
+    }
+
     onItemLoading (args: ItemEventData) {
         if (args.ios) {
             // args.ios is instance of UITableViewCell
@@ -29,7 +34,7 @@ export class NewsfeedComponent implements OnInit {
         }
     }
 
-    constructor(private account: AccountProvider, private newsfeedProvider: NewsfeedProvider) {
+    constructor(private account: AccountProvider, private newsfeedProvider: NewsfeedProvider, private router: RouterExtensions) {
         this.news = this.newsfeedProvider.getNews();
     }
 
