@@ -1,5 +1,8 @@
+<ActionBar [title]="item.title" class="action-bar">
+</ActionBar>
+
 <ScrollView>
-    <StackLayout class="m-20">
+    <StackLayout class="m-15">
         <Label [text]="item.title" textWrap="true" class="h1 m-b-20"></Label>
         <WebImage [src]="item.image" stretch="aspectFill" height="240" *ngIf="item.image" class="m-b-10"></WebImage>
         <Label [text]="item.content" textWrap="true"></Label>

@@ -1,6 +1,6 @@
 <ActionBar title="" class="action-bar">
-    <StackLayout orientation="horizontal" ios:horizontalAlignment="left" android:horizontalAlignment="left">
-        <Image src="res://logo" class="action-image m-y-5"></Image>
+    <StackLayout ios:horizontalAlignment="left" android:horizontalAlignment="center">
+        <Image src="res://logo" class="action-image m-y-5" android:height="32"></Image>
     </StackLayout>
 
     <ActionItem (tap)="logout()" ios.position="right" *ngIf="account.isLoggedIn" icon="res://export">
@@ -11,20 +11,50 @@
 
 </ActionBar>
 
-<TabView #tabView class="tab-view" selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)">
+<!-- <TabView #tabView class="tab-view" selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)">
     <StackLayout *tabItem="{title: 'News', iconSource:'res://home'}">
-        <router-outlet name="tab0"></router-outlet>
+        <page-router-outlet name="tab0"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stay', iconSource:'res://sofa'}">
-        <router-outlet name="tab1"></router-outlet>
+        <page-router-outlet name="tab1"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Share', iconSource:'res://plus'}">
-        <router-outlet name="tab2"></router-outlet>
+        <page-router-outlet name="tab2"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Explore', iconSource:'res://map_marker'}">
-        <router-outlet name="tab3"></router-outlet>
+        <page-router-outlet name="tab3"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Settings', iconSource:'res://settings'}">
-        <router-outlet name="tab4"></router-outlet>
+        <page-router-outlet name="tab4"></page-router-outlet>
     </StackLayout>
-</TabView>
+</TabView> -->
+<GridLayout rows="*, auto" id="gridLayout">
+    <StackLayout [visibility]="(selectedTab==0) ? 'visible' : 'collapsed'">
+        <page-router-outlet name="tab0"></page-router-outlet>
+    </StackLayout>
+    <StackLayout [visibility]="(selectedTab==1) ? 'visible' : 'collapsed'">
+        <page-router-outlet name="tab1"></page-router-outlet>
+    </StackLayout>
+    <StackLayout [visibility]="(selectedTab==2) ? 'visible' : 'collapsed'">
+        <page-router-outlet name="tab2"></page-router-outlet>
+    </StackLayout>
+    <StackLayout [visibility]="(selectedTab==3) ? 'visible' : 'collapsed'">
+        <page-router-outlet name="tab3"></page-router-outlet>
+    </StackLayout>
+    <StackLayout [visibility]="(selectedTab==4) ? 'visible' : 'collapsed'">
+        <page-router-outlet name="tab4"></page-router-outlet>
+    </StackLayout>
+    <BottomBar row="1" [height]="bottombarHeight" [items]="items" [hide]="hidden" [titleState]="titleState" (loaded)="tabLoaded($event)" (tabSelected)="tabSelected($event)" [inactiveColor]="inactiveColor" [accentColor]="accentColor" colored="true"></BottomBar>
+</GridLayout>
+
+<style>
+    ActionBar {
+        border-bottom-width: 1px;
+        border-bottom-color: #ccc;
+    }
+
+    BottomBar {
+        border-top-width: 1px;
+        border-top-color: #ccc;
+    }
+</style>

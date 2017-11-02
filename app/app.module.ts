@@ -36,6 +36,3 @@ import { AccountProvider } from "./services/account.provider"
 
 export class AppModule { }
 
-// additional components
-import { registerElement } from "nativescript-angular";
-registerElement("Gradient", () => require("nativescript-gradient").Gradient);

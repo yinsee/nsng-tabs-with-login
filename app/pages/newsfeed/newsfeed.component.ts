@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular";
+import { Page } from "ui/page";
 import { News } from "../../models/news"
 import { ItemEventData } from "ui/list-view";
 import { NewsfeedProvider } from "../../services/newsfeed.provider"
@@ -34,7 +35,7 @@ export class NewsfeedComponent implements OnInit {
         }
     }
 
-    constructor(private account: AccountProvider, private newsfeedProvider: NewsfeedProvider, private router: RouterExtensions) {
+    constructor(private account: AccountProvider, private newsfeedProvider: NewsfeedProvider, private router: RouterExtensions, private page: Page) {
         this.news = this.newsfeedProvider.getNews();
     }
 

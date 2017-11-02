@@ -1,8 +1,8 @@
-<Gradient direction="to bottom" colors="#00A8C5, #FFFF7E" ios:marginTop="-20">
+<Gradient direction="to bottom" colors="#00A8C5, #FFFF7E" [marginTop]="marginTop()" [paddingTop]="-marginTop()">
 
     <GridLayout rows="*, auto, *">
         <StackLayout row="0">
-            <Button text="Cancel" color="white" horizontalAlignment="right" class="m-10" (tap)="close()"></Button>
+            <Button text="Cancel" color="white" horizontalAlignment="right" class="btn m-x-30" (tap)="close()"></Button>
         </StackLayout>
 
         <StackLayout class="form" row="1" horizontalAlignment="center">
@@ -12,7 +12,7 @@
             <Button class="btn btn-primary btn-rounded-lg" text="LOGIN" (tap)="login()"></Button>
             <Label class="footnote text-center" text="Forgot your password?" textWrap="true" (tap)="forgotpassword()"></Label>
             <Label class="footnote text-center m-t-30" text="Not a member yet?" textWrap="true"></Label>
-            <Button class="btn text-center" text="Create an account" (tap)="signup()" height="20"></Button>
+            <Button class="btn text-center" text="Create an account" (tap)="signup()"></Button>
         </StackLayout>
     </GridLayout>
 </Gradient>

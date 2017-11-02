@@ -1,3 +1,29 @@
-<GridLayout class="m-15">
-    <Label text="Sharing feature, snap photo and upload" textWrap="true" class="text-center"></Label>
-</GridLayout>
+<ScrollView>
+    <StackLayout class="form m-15">
+        <StackLayout orientation="horizontal">
+            <Image src="res://sofa" width="44" class="m-r-20"></Image>
+            <StackLayout>
+                <Label class="h2" text="Sharing your story is easy!" textWrap="true"></Label>
+                <Label class="body" text="Just snap photo or select from album to upload" textWrap="true"></Label>
+            </StackLayout>
+        </StackLayout>
+
+        <Label text="Title" class="footnote m-y-10 m-t-25"></Label>
+        <TextField hint="Title of the story" class="input input-border" [(ngModel)]="title"></TextField>
+
+        <Label text="Pick an image" class="footnote m-y-10 m-t-25"></Label>
+        <Image id="preview" src="~/images/placeholder.png" class="m-b-5" height="200" stretch="aspectFill"></Image>
+
+        <GridLayout columns="*,10,*">
+            <Button col="0" text="Take Photo" class="btn btn-outline btn-rounded-lg" style="margin:0;padding:0;" (tap)="takephoto()"></Button>
+
+            <Button col="2" text="Select Photo" class="btn btn-outline btn-rounded-lg" style="margin:0;padding:0;" (tap)="pickphoto()"></Button>
+        </GridLayout>
+
+        <Label text="Tell us what happened" class="footnote m-y-10 m-t-25"></Label>
+        <TextView class="input input-border" hint="Tell your story" [(ngModel)]="content" editable="true" height="200"></TextView>
+
+        <Button text="Submit" class="btn btn-primary btn-rounded-lg" marginTop="25" (tap)="submit()"></Button>
+
+    </StackLayout>
+</ScrollView>
